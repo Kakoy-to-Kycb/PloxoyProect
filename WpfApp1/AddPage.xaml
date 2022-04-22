@@ -49,14 +49,14 @@
         <TextBox Grid.Column="1" Width="300" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,5" Name="tbArticle" Text="{Binding ProductArticleNumber}" />
         <TextBox Grid.Column="1" Grid.Row="1" Width="300" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,5" Name="tbName" Text="{Binding ProductName}"  />
         <TextBox Grid.Column="1" Grid.Row="2" Width="300" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,5" Name="tbDiscription" Text="{Binding ProductDescription}"  />
-        <ComboBox Name="cbCategory" Grid.Column="1" Grid.Row="3" Width="300" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,5" SelectedItem="{Binding ProductCategory}"  />
+        <ComboBox Name="cbCategory" Grid.Column="1" Grid.Row="3" Width="300" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,5" SelectedItem="{Binding Categories}"  />
         <TextBox Grid.Column="1" Grid.Row="4" Width="300" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,5" Name="tbPhoto" Text="{Binding ProductPhoto}"  />
-        <ComboBox Name="cbManufactory" Grid.Column="1" Grid.Row="5" Width="300" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,5" SelectedItem="{Binding ProductManufacturer}"/>
+        <ComboBox Name="cbManufactory" Grid.Column="1" Grid.Row="5" Width="300" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,5" SelectedItem="{Binding Manufactures}"/>
         <TextBox Grid.Column="1" Grid.Row="6" Width="300" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,5" Name="tbCost" PreviewTextInput="tbCost_PreviewTextInput" Text="{Binding ProductCost}"  />
         <TextBox Grid.Column="1" Grid.Row="7" Width="300" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,5" Name="tbDiscountAmount" PreviewTextInput="tbDiscountAmount_PreviewTextInput" Text="{Binding ProductDiscountAmount}"  />
         <TextBox Grid.Column="1" Grid.Row="8" Width="300" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,5" Name="tbQuantityInStock" PreviewTextInput="tbQuantityInStock_PreviewTextInput" Text="{Binding ProductQuantityInStock}"  />
         <TextBox Grid.Column="1" Grid.Row="9" Width="300" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,5" Name="tbStatus" Text="{Binding ProductStatus}"  /> 
         <TextBox Grid.Column="1" Grid.Row="10" Width="300" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,5" Name="tbDiscountMax" PreviewTextInput="tbDiscountMax_PreviewTextInput"  Text="{Binding ProductDiscountMax}"  />
-        <ComboBox Name="cbSupplier" Grid.Column="1" Grid.Row="11" Width="300" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,5" SelectedItem="{Binding ProductSupplier}"/>
+        <ComboBox Name="cbSupplier" Grid.Column="1" Grid.Row="11" Width="300" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,5" SelectedItem="{Binding Supplier}"/>
     </Grid>
 </Page>

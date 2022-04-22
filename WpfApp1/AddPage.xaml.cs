@@ -29,10 +29,11 @@ namespace WpfApp1
             if (selectedProd != null)
                 prod = selectedProd;
 
+            DataContext = prod;
+
             cbCategory.ItemsSource = TradeEntities.GetContext().Categories.ToList();
             cbManufactory.ItemsSource = TradeEntities.GetContext().Manufactures.ToList();
             cbSupplier.ItemsSource = TradeEntities.GetContext().Supplier.ToList();
-            DataContext = prod;
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -57,7 +58,7 @@ namespace WpfApp1
                 return;
             }
 
-            if (prod.ProductArticleNumber == null)
+           /* if (prod.ProductID == 0)
                 TradeEntities.GetContext().Product.Add(prod);
 
             try
@@ -70,7 +71,7 @@ namespace WpfApp1
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-            }
+            }*/
         }
 
 

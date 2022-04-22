@@ -65,7 +65,17 @@ namespace WpfApp1
             }
         }
 
-        private void btnDelete_Click_1(object sender, RoutedEventArgs e)
+        private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void cbSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void cbFilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

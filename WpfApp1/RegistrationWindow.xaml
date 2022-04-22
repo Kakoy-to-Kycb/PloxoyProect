@@ -10,19 +10,19 @@
         FontFamily="Comic Sans MS">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
         <Label Content="Регистрация" Foreground="White" FontSize="25" Margin="10,0"/>
@@ -39,7 +39,7 @@
         <TextBox Name="tbPatronimic" Text="{Binding UserPatronymic}" Grid.Row="3" Grid.Column="1" Margin="5"/>
         <TextBox Name="tbLogin" Text="{Binding UserLogin}" Grid.Row="4" Grid.Column="1" Margin="5"/>
         <TextBox Name="tbPassword" Text="{Binding UserPassword}" Grid.Row="5" Grid.Column="1" Margin="5"/>
-        <ComboBox Name="cbRole" SelectedItem="{Binding UserRole}" Grid.Column="1" Grid.Row="6" Margin="5" DisplayMemberPath="RoleName"/>
+        <ComboBox Name="cbRole" SelectedItem="{Binding Role}" Grid.Column="1" Grid.Row="6" Margin="5" DisplayMemberPath="RoleName"/>
         <Button Name="btnBack" Content="Назад" Grid.Row="7" Grid.Column="1" Width="100" Height="30" Background="#FF498C51" Foreground="White" Click="btnBack_Click"/>
     </Grid>
 </Window>

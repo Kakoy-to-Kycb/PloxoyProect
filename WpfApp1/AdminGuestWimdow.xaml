@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Главное меню" Height="500" Width="1000" ResizeMode="NoResize"
+        Title="Главное меню" Height="500" Width="1000" MinWidth="1000" MinHeight="500"
         FontFamily="Comic Sans MS"
         WindowStartupLocation="CenterScreen">
     
