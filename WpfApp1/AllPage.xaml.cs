@@ -24,6 +24,22 @@ namespace WpfApp1
         {
             InitializeComponent();
             dgProd.ItemsSource = TradeEntities.GetContext().Product.ToList();
+
+            //НОВОЕ
+            List<string> sort = new List<string>();
+            sort.Add("Сортировка");
+            sort.Add("По возрастанию цены");
+            sort.Add("По убыванию цены");
+            cbSort.ItemsSource = sort;
+
+            var manufacturers = TradeEntities.GetContext().Manufactures.ToList();
+            manufacturers.Insert(0, new Manufactures { ManufactoryName = "Все производители" });
+            cbManufacturers.ItemsSource = manufacturers;
+            cbManufacturers.DisplayMemberPath = "ManufactureID";
+            cbManufacturers.SelectedValuePath = "Title";
+
+            cbManufacturers.SelectedItem = 0;
+            cbSort.SelectedItem = 0;
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
@@ -78,6 +94,52 @@ namespace WpfApp1
         private void cbFilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        //НОВОЕ
+        private void UpdateProducts()
+        {
+            var products = TradeEntities.GetContext().Product.ToList();
+
+            if (!string.IsNullOrEmpty(tbFinder.Text))
+            {
+                products = products.Where(p => p.ProductName.Contains(tbFinder.Text)).ToList();
+            }
+
+            if (cbManufacturers.SelectedIndex > 0)
+            {
+                products = products.Where(p => p.ProductManufacturer == int.Parse(cbManufacturers.SelectedValue.ToString())).ToList();
+            }
+
+            if (cbSort.SelectedIndex > 0)
+            {
+                switch (cbSort.SelectedIndex)
+                {
+                    case 1:
+                        products = products.OrderBy(p => p.ProductCost).ToList();
+                        break;
+                    case 2:
+                        products = products.OrderByDescending(p => p.ProductCost).ToList();
+                        break;
+                }
+            }
+
+            dgProd.ItemsSource = products;
+        }
+
+        private void tbFinder_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateProducts();
+        }
+
+        private void cbManufacturers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UpdateProducts();
+        }
+
+        private void cbSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UpdateProducts();
         }
     }
 }
