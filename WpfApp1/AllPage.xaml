@@ -24,7 +24,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBox Name="tbSearch" TextChanged="tbSearch_TextChanged"  Grid.Column="0" Margin="5" Width="300" Height="30"/>
+            <TextBox Name="tbFinder" TextChanged="tbSearch_TextChanged"  Grid.Column="0" Margin="5" Width="300" Height="30"/>
             <ComboBox Name="cbSort"  Grid.Column="1" SelectionChanged="cbSort_SelectionChanged"  Width="290" Height="30" Margin="5" >
                 <ComboBoxItem>Сортировка
                 </ComboBoxItem>
@@ -34,7 +34,7 @@
                 <ComboBoxItem>По категории, по возрастанию</ComboBoxItem>
             </ComboBox>
 
-            <ComboBox Name="cbFilter" Grid.Column="2" Grid.Row="1" ToolTip="Фильтрация" SelectionChanged="cbFilter_SelectionChanged"  Width="290" Height="30" Margin="5"/>
+            <ComboBox Name="cbManufacturers" Grid.Column="2" Grid.Row="1" ToolTip="Фильтрация" SelectionChanged="cbFilter_SelectionChanged"  Width="290" Height="30" Margin="5"/>
         </Grid>
 
         <DataGrid Name="dgProd" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1">
