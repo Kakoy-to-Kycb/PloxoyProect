@@ -13,9 +13,9 @@
             <Label Content="Авторизация" Foreground="White" FontSize="25" HorizontalAlignment="Center"/>
             <Separator/>
             <Label Content="Логин" Foreground="White" FontSize="20"/>
-            <TextBox Name="tbUserLogin" Height="25"/>
+            <TextBox Name="tbUserLogin" Text="222" Height="25"/>
             <Label Content="Пароль" Foreground="White" FontSize="20"/>
-            <PasswordBox Name="pbPassword" Height="25"/>
+            <PasswordBox Name="pbPassword" Password="222" Height="25"/>
             <StackPanel Orientation="Horizontal">
                 <Button x:Name="btnLogin" Content="Вход" Width="100" Height="30"  Click="btnLogin_Click" HorizontalAlignment="Center" Margin="25,30" Background="#FF76E383"/>
                 <Button x:Name="btnRegistration" Content="Регистрация" Width="100" Height="30" HorizontalAlignment="Center" Margin="25,30" Click="btnRegistration_Click" Background="#FF76E383" />
