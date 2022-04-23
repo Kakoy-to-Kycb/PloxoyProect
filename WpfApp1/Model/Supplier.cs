@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp1
 {
-    partial class Supplier
+    public partial class Supplier
     {
         public override string ToString()
         {

@@ -25,21 +25,14 @@ namespace WpfApp1
             InitializeComponent();
             dgProd.ItemsSource = TradeEntities.GetContext().Product.ToList();
 
-            //НОВОЕ
-            List<string> sort = new List<string>();
-            sort.Add("Сортировка");
-            sort.Add("По возрастанию цены");
-            sort.Add("По убыванию цены");
-            cbSort.ItemsSource = sort;
-
             var manufacturers = TradeEntities.GetContext().Manufactures.ToList();
             manufacturers.Insert(0, new Manufactures { ManufactoryName = "Все производители" });
             cbManufacturers.ItemsSource = manufacturers;
-            cbManufacturers.DisplayMemberPath = "ManufactureID";
-            cbManufacturers.SelectedValuePath = "Title";
+            cbManufacturers.SelectedValuePath = "ManufactureID";
 
-            cbManufacturers.SelectedItem = 0;
-            cbSort.SelectedItem = 0;
+            cbManufacturers.SelectedIndex = 0;
+            cbSort.SelectedIndex = 0;
+
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
@@ -83,34 +76,34 @@ namespace WpfApp1
 
         private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            UpdateProducts();
         }
 
         private void cbSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            UpdateProducts();
         }
 
         private void cbFilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            UpdateProducts();
         }
 
-        //НОВОЕ
         private void UpdateProducts()
         {
             var products = TradeEntities.GetContext().Product.ToList();
 
-            if (!string.IsNullOrEmpty(tbFinder.Text))
+            //Для поиска
+            if (!string.IsNullOrEmpty(tbSearch.Text))
             {
-                products = products.Where(p => p.ProductName.Contains(tbFinder.Text)).ToList();
+                products = products.Where(p => p.ProductName.ToLower().Contains(tbSearch.Text.ToLower())).ToList();
             }
-
+            //Для производителей
             if (cbManufacturers.SelectedIndex > 0)
             {
                 products = products.Where(p => p.ProductManufacturer == int.Parse(cbManufacturers.SelectedValue.ToString())).ToList();
             }
-
+            //Для сортировки (на каждый пункт списка свой case!!)
             if (cbSort.SelectedIndex > 0)
             {
                 switch (cbSort.SelectedIndex)
@@ -123,23 +116,8 @@ namespace WpfApp1
                         break;
                 }
             }
-
+            //Обновление данных в гриде
             dgProd.ItemsSource = products;
-        }
-
-        private void tbFinder_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            UpdateProducts();
-        }
-
-        private void cbManufacturers_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            UpdateProducts();
-        }
-
-        private void cbSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            UpdateProducts();
         }
     }
 }

@@ -24,33 +24,31 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBox Name="tbFinder" TextChanged="tbSearch_TextChanged"  Grid.Column="0" Margin="5" Width="300" Height="30"/>
+            <TextBox Name="tbSearch" TextChanged="tbSearch_TextChanged"  Grid.Column="0" Margin="5" Width="300" Height="30"/>
             <ComboBox Name="cbSort"  Grid.Column="1" SelectionChanged="cbSort_SelectionChanged"  Width="290" Height="30" Margin="5" >
-                <ComboBoxItem>Сортировка
-                </ComboBoxItem>
-                <ComboBoxItem>По наименованию, от А до Я</ComboBoxItem>
-                <ComboBoxItem>По наименованию, от Я до А</ComboBoxItem>
-                <ComboBoxItem>По категории, по убыванию</ComboBoxItem>
-                <ComboBoxItem>По категории, по возрастанию</ComboBoxItem>
+                <ComboBoxItem>Сортировка</ComboBoxItem>
+                <ComboBoxItem>По возрастанию цены</ComboBoxItem>
+                <ComboBoxItem>По убыванию цены</ComboBoxItem>
+
             </ComboBox>
 
             <ComboBox Name="cbManufacturers" Grid.Column="2" Grid.Row="1" ToolTip="Фильтрация" SelectionChanged="cbFilter_SelectionChanged"  Width="290" Height="30" Margin="5"/>
         </Grid>
 
-        <DataGrid Name="dgProd" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1">
+        <DataGrid Name="dgProd" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1" Margin="5">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Артикул" Binding="{Binding ProductArticleNumber}" Width="auto"/>
                 <DataGridTextColumn Header="Название" Binding="{Binding ProductName}" Width="auto"/>
                 <DataGridTextColumn Header="Описание" Binding="{Binding ProductDescription}" Width="auto"/>
                 <DataGridTextColumn Header="Категория" Binding="{Binding ProductCategory}" Width="auto"/>
                 <DataGridTextColumn Header="Фото" Binding="{Binding ProductPhoto}" Width="auto"/>
-                <DataGridTextColumn Header="Производитель" Binding="{Binding ProductManufacturer}" Width="auto"/>
+                <DataGridTextColumn Header="Производитель" Binding="{Binding Manufactures}" Width="auto"/>  <!--Изменил ProductManufacturer на Manufacturers (класс в папке Model), чтобы выводилось текстом, а не цифрой-->
                 <DataGridTextColumn Header="Цена" Binding="{Binding ProductCost}" Width="auto"/>
                 <DataGridTextColumn Header="Скидка" Binding="{Binding ProductDiscountAmount}" Width="auto"/>
                 <DataGridTextColumn Header="Кол-во на складе" Binding="{Binding ProductQuantityInStock}" Width="auto"/>
                 <DataGridTextColumn Header="Ед. измер" Binding="{Binding ProductStatus}" Width="auto"/>
                 <DataGridTextColumn Header="Макс. скидка" Binding="{Binding ProductDiscountMax}" Width="auto"/>
-                <DataGridTextColumn Header="Поставщик" Binding="{Binding ProductSupplier}" Width="auto"/>
+                <DataGridTextColumn Header="Поставщик" Binding="{Binding Supplier}" Width="auto"/> <!--Изменил ProductSupplier на Supplier (класс в папке Model), чтобы выводилось текстом, а не цифрой-->
                 <DataGridTemplateColumn Width="auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

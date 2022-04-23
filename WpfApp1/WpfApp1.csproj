@@ -85,7 +85,7 @@
     </Compile>
     <Compile Include="Category.cs" />
     <Compile Include="Manager.cs" />
-    <Compile Include="Manufactories.cs" />
+    <Compile Include="Model\Manufactures.cs" />
     <Compile Include="Manufactures.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -94,6 +94,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\Product.cs" />
     <Compile Include="Order.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -116,7 +117,7 @@
     <Compile Include="Supplier.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Suppliers.cs" />
+    <Compile Include="Model\Supplier.cs" />
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
